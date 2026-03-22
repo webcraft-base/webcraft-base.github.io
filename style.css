@@ -66,6 +66,8 @@ main {
 
 html {
   scroll-behavior: smooth;
+  /* ★追加：固定ヘッダーの高さ分（約80px〜100px）だけ手前で止める設定 */
+  scroll-padding-top: 100px;
 }
 
 section {
@@ -148,7 +150,7 @@ section {
 /* おすすめメニュー */
 .menu {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 80px;
 }
 
 .menu-items {
@@ -175,7 +177,7 @@ section {
 /* アクセス情報 */
 .access {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 65px;
 }
 
 .access-inner {
@@ -216,7 +218,7 @@ footer {
    スマホ対応（max-width: 768px）
 ----------------------------- */
 @media (max-width: 768px) {
-  
+
   /* パソコン用の改行をスマホでは無効化 */
   .pc-only {
     display: none;
@@ -234,6 +236,11 @@ footer {
     align-items: center;
     gap: 10px;
     padding: 10px;
+  }
+
+  /* スマホはヘッダーが厚いので、150pxくらい手前で止まるようにする */
+  html {
+    scroll-padding-top: 150px;
   }
 
   .logo {
@@ -269,7 +276,8 @@ footer {
 
   .main-visual p {
     font-size: 15px;
-    max-width: 300px; /* スマホ幅に合わせて調整 */
+    max-width: 300px;
+    /* スマホ幅に合わせて調整 */
   }
 
   /* 私たちについてスマホ調整 */
@@ -289,12 +297,15 @@ footer {
   }
 
   /* メニュー・アクセスのスマホ調整 */
-  .menu-items, .access-inner {
+  .menu-items,
+  .access-inner {
     flex-direction: column;
     gap: 15px;
   }
 
-  .menu-item, .access-map, .access-info {
+  .menu-item,
+  .access-map,
+  .access-info {
     width: 100%;
   }
 
