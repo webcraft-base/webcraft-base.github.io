@@ -191,21 +191,91 @@ img {
   max-width: 100%;
 }
 
-/* スマホ対応 */
+/* -----------------------------
+   スマホ対応（最大幅768px以下）
+----------------------------- */
 @media (max-width: 768px) {
 
-  /* メニューを縦並びに */
-  .menu-items {
-    flex-direction: column;
+  /* -----------------------------
+     ヘッダーのロゴ
+  ----------------------------- */
+  .logo {
+    white-space: nowrap;
+    font-size: 20px; /* 少し大きめで見やすく */
   }
 
-  .menu-item {
+  /* ナビゲーション非表示（ハンバーガーメニュー前提） */
+  .menu-items {
+    display: none;
+  }
+
+  /* -----------------------------
+     メインビジュアル
+  ----------------------------- */
+  .main-visual {
+    padding: 20px 10px; /* 余白調整 */
     width: 100%;
   }
 
-  /* アクセスも縦並び */
-  .access-inner {
+  .main-visual h2 {
+    font-size: 28px;       
+    line-height: 1.3em;    
+    text-align: center;
+    margin-bottom: 10px;
+    word-break: break-word; /* 自然な改行 */
+  }
+
+  .main-visual p {
+    font-size: 16px;       
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;       /* 横幅を少し広くして自然な改行 */
+    max-width: 320px; /* 大きすぎず小さすぎず */
+    word-break: break-word; /* 自然な改行 */
+  }
+
+  /* -----------------------------
+     私たちについて
+  ----------------------------- */
+  .about p {
+    font-size: 15px;
+    line-height: 1.5em;
+    word-break: break-word; /* 自然な改行 */
+    margin: 10px auto;
+    width: 90%;
+    max-width: 360px;
+    text-align: left;
+  }
+
+  .about-images {
+    display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .about-images img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* -----------------------------
+     メニュー画像
+  ----------------------------- */
+  .menu img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* -----------------------------
+     アクセス情報
+  ----------------------------- */
+  .access-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .access-map,
@@ -215,15 +285,7 @@ img {
 
   .access-info {
     padding-left: 0;
-  }
-
-  /* 私たちについて画像 */
-  .about-images {
-    flex-direction: column;
-  }
-
-  .about-images img {
-    width: 100%;
+    margin-top: 10px;
   }
 
 }
