@@ -191,79 +191,19 @@ img {
   max-width: 100%;
 }
 
-/* スマホ対応（最大幅768px以下） */
+/* スマホ対応 */
 @media (max-width: 768px) {
 
-  /* -----------------------------
-     ヘッダーのロゴ
-  ----------------------------- */
-  .logo {
-    white-space: nowrap;
-    font-size: 20px; /* 少し大きめで見やすく */
-  }
-
-  /* ナビゲーション非表示（ハンバーガーメニュー前提） */
+  /* メニューを縦並びに */
   .menu-items {
-    display: none;
-  }
-
-  /* -----------------------------
-     メインビジュアル
-  ----------------------------- */
-  .main-visual {
-    padding: 20px 10px; /* 余白調整 */
-  }
-
-  .main-visual h2 {
-    font-size: 28px;       /* 少し小さめ */
-    line-height: 1.2em;    /* 行間を自然に */
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .main-visual p {
-    font-size: 16px;       /* 小さめで全体バランス */
-    line-height: 1.4em;
-    text-align: center;
-    word-break: keep-all;
-    margin: 0 auto;
-    max-width: 280px;      /* 文章を読みやすく制限 */
-  }
-
-  /* -----------------------------
-     私たちについて
-  ----------------------------- */
-  .about p {
-    font-size: 15px;
-    line-height: 1.5em;
-    word-break: keep-all;
-    margin: 10px auto;
-    max-width: 320px;
-    text-align: left; /* 左揃えの方が読みやすい */
-  }
-
-  .about-images {
     flex-direction: column;
   }
 
-  .about-images img {
+  .menu-item {
     width: 100%;
-    height: auto;
-    margin-bottom: 10px;
   }
 
-  /* -----------------------------
-     メニュー画像
-  ----------------------------- */
-  .menu img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  /* -----------------------------
-     アクセス情報
-  ----------------------------- */
+  /* アクセスも縦並び */
   .access-inner {
     flex-direction: column;
   }
@@ -275,7 +215,15 @@ img {
 
   .access-info {
     padding-left: 0;
-    margin-top: 10px;
+  }
+
+  /* 私たちについて画像 */
+  .about-images {
+    flex-direction: column;
+  }
+
+  .about-images img {
+    width: 100%;
   }
 
 }
