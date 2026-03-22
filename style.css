@@ -190,3 +190,40 @@ section {
 img {
   max-width: 100%;
 }
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+
+  /* メニューを縦並びに */
+  .menu-items {
+    flex-direction: column;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+
+  /* アクセスも縦並び */
+  .access-inner {
+    flex-direction: column;
+  }
+
+  .access-map,
+  .access-info {
+    width: 100%;
+  }
+
+  .access-info {
+    padding-left: 0;
+  }
+
+  /* 私たちについて画像 */
+  .about-images {
+    flex-direction: column;
+  }
+
+  .about-images img {
+    width: 100%;
+  }
+
+}
