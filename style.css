@@ -207,7 +207,7 @@ img {
   }
 
   .logo {
-    font-size: 20px;          /* ロゴの文字サイズ */
+    font-size: 16px;          /* ロゴの文字サイズ */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -220,7 +220,7 @@ img {
   }
 
   nav li {
-    font-size: 14px;          /* ナビの文字サイズ */
+    font-size: 12px;          /* ナビの文字サイズ */
   }
 
   /* -----------------------------
