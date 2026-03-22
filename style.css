@@ -191,19 +191,59 @@ img {
   max-width: 100%;
 }
 
-/* スマホ対応 */
+/* -----------------------------
+   スマホ対応（max-width: 768px）
+----------------------------- */
 @media (max-width: 768px) {
 
-  /* メニューを縦並びに */
+  /* -----------------------------
+     ヘッダー
+  ----------------------------- */
+  .header-inner {
+    flex-direction: column;   /* 縦並びに */
+    align-items: flex-start;  /* 左揃え */
+    gap: 10px;                /* ロゴとナビの間隔 */
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  nav ul {
+    flex-direction: column;   /* ナビを縦並びに */
+    gap: 5px;
+  }
+
+  nav li {
+    font-size: 14px;
+  }
+
+  /* -----------------------------
+     メニュー
+  ----------------------------- */
   .menu-items {
-    flex-direction: column;
+    flex-direction: column;   /* 縦並び */
+    gap: 10px;
   }
 
   .menu-item {
-    width: 100%;
+    width: 100%;              /* 横幅いっぱい */
   }
 
-  /* アクセスも縦並び */
+  .menu-item p {
+    font-size: 16px;
+    line-height: 1.4em;
+    word-break: break-word;
+  }
+
+  /* -----------------------------
+     アクセス情報
+  ----------------------------- */
   .access-inner {
     flex-direction: column;
   }
@@ -217,7 +257,9 @@ img {
     padding-left: 0;
   }
 
-  /* 私たちについて画像 */
+  /* -----------------------------
+     私たちについて画像
+  ----------------------------- */
   .about-images {
     flex-direction: column;
   }
