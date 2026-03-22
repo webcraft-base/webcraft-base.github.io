@@ -7,10 +7,14 @@ body {
   background-color: #e8dfd5;
 }
 
-/* ヘッダー */
+/* ヘッダー固定設定 */
 header {
   background-color: #d6c4b2;
-  padding: 20px 0;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
@@ -60,6 +64,10 @@ main {
   padding: 0 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   padding: 80px 20px;
 }
@@ -105,9 +113,8 @@ section {
   z-index: 1;
   font-size: 18px;
   line-height: 1.8;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
-  word-break: break-word;
 }
 
 /* 私たちについて */
@@ -121,10 +128,9 @@ section {
 
 .about p {
   font-size: 16px;
-  line-height: 1.6em;
-  max-width: 600px;
+  line-height: 1.8em;
+  max-width: 800px;
   margin: 10px auto;
-  word-break: break-word;
 }
 
 .about-images {
@@ -164,8 +170,6 @@ section {
 .menu-item p {
   margin: 5px 0;
   font-size: 16px;
-  line-height: 1.5em;
-  word-break: break-word;
 }
 
 /* アクセス情報 */
@@ -193,8 +197,7 @@ section {
   text-align: left;
   padding-left: 60px;
   font-size: 15px;
-  line-height: 1.5em;
-  word-break: break-word;
+  line-height: 1.6em;
 }
 
 /* 画像全般 */
@@ -202,58 +205,77 @@ img {
   max-width: 100%;
 }
 
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
 /* -----------------------------
    スマホ対応（max-width: 768px）
 ----------------------------- */
 @media (max-width: 768px) {
+  
+  /* パソコン用の改行をスマホでは無効化 */
+  .pc-only {
+    display: none;
+  }
 
-  /* ヘッダー */
+  /* spanを塊として扱い、変な改行を防ぐ */
+  .main-visual p span,
+  .about p span {
+    display: inline-block;
+  }
+
+  /* ヘッダー：ロゴ1行、ナビ2行の構成 */
   .header-inner {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 5px 15px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
   }
 
   .logo {
-    font-size: 16px;
-    gap: 8px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .logo img {
+    width: 45px;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
   }
 
   nav li {
-    font-size: 12px;
+    font-size: 13px;
   }
 
-  /* メインビジュアル */
+  /* メインビジュアルのスマホ調整 */
   .main-visual {
-    padding: 15px 10px;
+    padding: 30px 10px;
+    min-height: 200px;
   }
 
   .main-visual h2 {
     font-size: 26px;
-    line-height: 1.3em;
     margin-bottom: 8px;
-    max-width: 90%;
   }
 
   .main-visual p {
     font-size: 15px;
-    line-height: 1.5em;
-    max-width: 280px;
-    margin: 0 auto 10px;
+    max-width: 300px; /* スマホ幅に合わせて調整 */
   }
 
-  /* 私たちについて */
+  /* 私たちについてスマホ調整 */
   .about p {
     font-size: 14px;
-    line-height: 1.5em;
-    max-width: 320px;
-    margin: 8px auto;
+    max-width: 90%;
   }
 
   .about-images {
@@ -262,38 +284,21 @@ img {
 
   .about-images img {
     width: 100%;
+    height: auto;
     margin-bottom: 10px;
   }
 
-  /* おすすめメニュー */
-  .menu-items {
+  /* メニュー・アクセスのスマホ調整 */
+  .menu-items, .access-inner {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 
-  .menu-item {
-    width: 100%;
-  }
-
-  .menu-item p {
-    font-size: 14px;
-    line-height: 1.4em;
-  }
-
-  /* アクセス情報 */
-  .access-inner {
-    flex-direction: column;
-  }
-
-  .access-map,
-  .access-info {
+  .menu-item, .access-map, .access-info {
     width: 100%;
   }
 
   .access-info {
     padding-left: 0;
-    font-size: 13px;
-    line-height: 1.4em;
   }
-
 }
